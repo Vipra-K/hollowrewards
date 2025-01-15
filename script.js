@@ -43,4 +43,4 @@ async function updateLeaderboard() {
 updateLeaderboard();
 
 // Update leaderboard every  12 hours
-setInterval(updateLeaderboard, 600000);
+setInterval(updateLeaderboard, 60000);

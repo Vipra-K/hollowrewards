@@ -575,13 +575,13 @@ body {
 }
 
 .fade-in-1 {
-  animation: fadeIn 1.6s ease-in;
+  animation: fadeIn 1.5s ease-in;
 }
 .fade-in-2 {
-  animation: fadeIn 1.8s ease-in;
+  animation: fadeIn 1.6s ease-in;
 }
 .fade-in-3 {
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 1.7s ease-in;
 }
 @keyframes fadeIn {
   0% {

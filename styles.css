@@ -10,6 +10,33 @@
   background: #052334;
   z-index: 9999;
 }
+.text-leaderboard {
+  font-size: 4rem;
+  margin-bottom: 5rem;
+  line-height: 1em;
+  width: 100%;
+  text-overflow: ellipsis; /* Fixed typo: should be 'ellipsis' */
+  margin-top: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff, 0 0 8px #ffffff;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .text-leaderboard {
+    font-size: 3 rem; /* Adjust font size for mobile */
+    margin-bottom: 3rem; /* Adjust margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .text-leaderboard {
+    font-size: 2.5rem; /* Further reduce font size for very small screens */
+    margin-bottom: 2rem; /* Reduce bottom margin */
+  }
+}
 
 .lds-hourglass {
   display: inline-block;
@@ -175,7 +202,9 @@ select {
 [type="reset"],
 [type="submit"],
 button {
+  appearance: button;
   -webkit-appearance: button;
+  -moz-appearance: button;
   background-color: transparent;
   background-image: none;
 }
@@ -198,7 +227,9 @@ progress {
 }
 
 [type="search"] {
+  appearance: textfield;
   -webkit-appearance: textfield;
+  -moz-appearance: textfield;
   outline-offset: -2px;
 }
 
@@ -286,7 +317,8 @@ object,
 svg,
 video {
   display: block;
-  vertical-align: middle;
+  /* vertical-align: middle; */
+  margin: auto;
 }
 
 img,
@@ -324,7 +356,7 @@ video {
   --primary-foreground: 0 0% 100%;
   --secondary: 210 30% 40%;
   --secondary-foreground: 0 0% 90%;
-  --muted: 210 15% 55%;
+  --muted: 210 25% 35%;
   --muted-foreground: 210 5% 70%;
   --accent: 210 65% 50%;
   --accent-foreground: 0 0% 100%;
@@ -666,8 +698,8 @@ body {
 }
 
 .my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .-ml-4 {
@@ -757,7 +789,7 @@ body {
 }
 
 .aspect-square {
-  aspect-ratio: 1/1;
+  aspect-ratio: 2/2;
 }
 
 .aspect-video {
@@ -1810,13 +1842,17 @@ body {
 }
 
 .py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .pb-2 {
@@ -2955,4 +2991,18 @@ body {
 
 .\[\&\>div\]\:m-0 > div {
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  #top-1 {
+    order: 1 !important; /* Force 1st position */
+  }
+
+  #top-2 {
+    order: 2 !important; /* Force 2nd position */
+  }
+
+  #top-3 {
+    order: 3 !important; /* Force 3rd position */
+  }
 }

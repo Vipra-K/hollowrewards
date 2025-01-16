@@ -1,9 +1,9 @@
 const SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL35iLwF3Yg17JNbRA752DP5x3mCNK69bQjrFe2kv8aLwObyU4C9C6dhxq-cs_InYyPvvncvuMomro/pub?gid=0&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ72U0vVU1fMh0r5q9d0QK46U3oRrU3Sduu-orvNfSPosS6VG_-EiHvKF1AC1okERY9uN1lmSVAYynk/pub?gid=0&single=true&output=tsv";
 async function fetchData() {
   const response = await fetch(SHEET_URL);
   const text = await response.text();
-  const rows = text.split("\n").map((row) => row.split(","));
+  const rows = text.split("\n").map((row) => row.split("\t"));
   return rows; // First row contains headers
 }
 
@@ -30,9 +30,10 @@ async function updateLeaderboard() {
       topPrize.innerHTML = "";
 
       // Update the content of these elements
-      if (topName) topName.innerHTML = name;
-      if (topWage) topWage.innerHTML = `$ ${wage}`;
-      if (topPrize) topPrize.innerHTML = prize;
+      topName.innerHTML = name;
+      topWage.innerHTML = `$ ${wage}`;
+      if (i < 4) topPrize.innerHTML = prize;
+      else topPrize.innerHTML = `$ ${prize}`;
     }
   }
   loadingIndicator.style.display = "none";
@@ -43,4 +44,4 @@ async function updateLeaderboard() {
 updateLeaderboard();
 
 // Update leaderboard every  12 hours
-setInterval(updateLeaderboard, 60000);
+setInterval(updateLeaderboard, 43200000);

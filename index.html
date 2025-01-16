@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+</head>
+
+<body>
+    <div id="loading-indicator">
+        <div class="lds-hourglass"></div>
+    </div>
+    <header
+        class="flex  bg-transparent top-0 z-[999] transition-all duration-300 items-center justify-center w-full px-5 mb-[var(--header-margin)]">
+        <nav
+            class="grid grid-cols-3 duration-300 nav-p  w-full transition-all justify-between items-center max-w-[calc(var(--content-width)_+_1000px)]">
+            <div class="flex items-center opacity-80 w-20"><a
+                    class="inline-flex items-center justify-start gap-3 transition-opacity hover:opacity-80" href="/"
+                    previewlistener="true"><span class="relative flex shrink-0 overflow-hidden rounded-full h-14"><img
+                            class="h-full w-auto aspect-auto" alt="HOLLOW" src="hollow.png"></span>
+                </a></div>
+        </nav>
+    </header>
+    <main class="flex flex-col items-center px-10  min-h-content-min-height max-sm:px-5 mx-248">
+        <span class="text-leaderboard">$1000 Leaderboard</span>
+
+        <div class="flex flex-col items-center w-full gap-12">
+            <div
+                class="grid items-center justify-center  w-full grid-cols-3 gap-8 pt-12 max-sm:grid-cols-1 max-md:grid-cols-2 max-md:grid-rows-2 max-sm:grid-rows-3">
+
+                <div id="top-2" class="fade-in-2"
+                    style="order: 1; margin-bottom: 0px; grid-column: span 1 / span 1; opacity: 1; transform: none;">
+                    <div data-winner="false"
+                        class="flex flex-col items-center rounded-xl group z-10 data-[winner=true]:!z-0">
+                        <div
+                            class="relative border-2 border-[hsl(264_48%_18%)] bg-card bg-gradient-to-b from-primary-dark/20 to-transparent rounded-2xl flex h-auto flex-col items-center gap-7 pt-10 w-[250px] glow-card ">
+                            <div
+                                class="absolute flex px-6 group-data-[winner=true]:text-2xl text-1xl group-data-[winner=true]:text-primary scale-[2.2] -top-3">
+                                2</div><span
+                                class="relative flex shrink-0 overflow-hidden rounded-full w-20 h-20 bg-muted">
+
+                                <img class="aspect-square h-full w-full p-2" alt="****te6" src="stake.svg">
+                            </span>
+                            <div class=" flex flex-col p-2 items-center overflow-hidden gap-2 rounded-t-[50%]
+                                    rounded-b-2xl pt-6 w-full bg-card border-t-2 border-primary/30">
+                                <h3 class="tracking-tight text-xl font-semibold" id="top-2-name">****te6</h3>
+                                <p class="text-muted-foreground inline-flex items-center gap-1 text-base font-semibold"
+                                    id="top-2-wage">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em">
+                                        <path
+                                            d="M411.387 303.256c-3.119-9.577-7.891-18.561-14.301-26.952-6.422-8.382-14.396-15.826-23.93-22.331-9.539-6.498-20.721-11.63-33.553-15.4-5.143-1.363-14.189-3.506-26.104-6.418-8.516-2.074-16.5-4.2-25.5-6.367V120.065c9 2.396 15.252 6.202 21.926 10.43C324.204 139.535 333.157 155 335.78 176h69.174c-.654-18-4.65-32.76-11.996-46.02-8.07-14.543-18.977-27.024-32.73-36.956-13.75-9.922-30.225-17.49-48.377-22.455C303.967 68.416 297 66.605 288 65.386V32h-64v33.167c-7 1.044-15.148 2.445-22.426 4.25-17.242 4.283-32.388 10.868-45.951 19.764-13.571 8.905-24.352 20.112-32.604 33.627-8.251 13.523-12.312 29.52-12.312 48 0 9.585 1.407 18.993 4.157 28.235 2.752 9.241 7.442 17.967 14.042 26.181 6.603 8.214 15.495 15.658 26.687 22.332 11.183 6.672 24.705 12.064 41.576 16.171 9.287 2.345 18.83 4.534 26.83 6.576v119.586c-11-2.919-21.889-7.399-30.678-13.479-9.17-6.327-16.066-13.953-21.198-23.884-4.779-9.229-7.073-20.526-7.407-32.526H96c.695 21 5.25 39.494 13.672 55.371 8.799 16.604 20.533 29.96 35.204 40.562 14.662 10.613 31.393 18.356 51.198 23.491 8.885 2.304 18.926 3.96 27.926 5.23V480h64v-34.54c10-1.069 18.957-2.69 28.527-4.879 18.701-4.273 35.645-11.036 50.316-20.276 14.662-9.24 26.621-21.128 35.611-35.681 8.98-14.541 13.545-32.085 13.545-52.619.001-9.578-1.501-19.164-4.612-28.749zM224 209.699c-12-3.743-23.912-9.088-32.051-16.048-8.621-7.355-12.673-17.534-12.673-30.545 0-9.241 2.414-16.94 7.004-23.102 4.58-6.161 9.912-11.038 16.88-14.631 6.18-3.189 13.84-5.565 20.84-7.138v91.464zm118.902 149.772c-2.939 6.673-7.699 12.576-14.303 17.711-6.602 5.133-15.744 9.328-26.377 12.577-4.5 1.378-8.223 2.444-14.223 3.236v-107.11c10 2.624 18.18 5.332 26.326 8.131 8.062 2.744 15.748 7.443 22.537 14.116 6.785 6.676 10.309 17.03 10.309 31.06.001 6.85-1.337 13.605-4.269 20.279z">
+                                        </path>
+                                    </svg>
+                                </p>
+                                <h3
+                                    class="tracking-tight inline-flex items-center justify-center gap-1 pb-2 text-xl font-bold text-primary">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em">
+                                        <path
+                                            d="M411.387 303.256c-3.119-9.577-7.891-18.561-14.301-26.952-6.422-8.382-14.396-15.826-23.93-22.331-9.539-6.498-20.721-11.63-33.553-15.4-5.143-1.363-14.189-3.506-26.104-6.418-8.516-2.074-16.5-4.2-25.5-6.367V120.065c9 2.396 15.252 6.202 21.926 10.43C324.204 139.535 333.157 155 335.78 176h69.174c-.654-18-4.65-32.76-11.996-46.02-8.07-14.543-18.977-27.024-32.73-36.956-13.75-9.922-30.225-17.49-48.377-22.455C303.967 68.416 297 66.605 288 65.386V32h-64v33.167c-7 1.044-15.148 2.445-22.426 4.25-17.242 4.283-32.388 10.868-45.951 19.764-13.571 8.905-24.352 20.112-32.604 33.627-8.251 13.523-12.312 29.52-12.312 48 0 9.585 1.407 18.993 4.157 28.235 2.752 9.241 7.442 17.967 14.042 26.181 6.603 8.214 15.495 15.658 26.687 22.332 11.183 6.672 24.705 12.064 41.576 16.171 9.287 2.345 18.83 4.534 26.83 6.576v119.586c-11-2.919-21.889-7.399-30.678-13.479-9.17-6.327-16.066-13.953-21.198-23.884-4.779-9.229-7.073-20.526-7.407-32.526H96c.695 21 5.25 39.494 13.672 55.371 8.799 16.604 20.533 29.96 35.204 40.562 14.662 10.613 31.393 18.356 51.198 23.491 8.885 2.304 18.926 3.96 27.926 5.23V480h64v-34.54c10-1.069 18.957-2.69 28.527-4.879 18.701-4.273 35.645-11.036 50.316-20.276 14.662-9.24 26.621-21.128 35.611-35.681 8.98-14.541 13.545-32.085 13.545-52.619.001-9.578-1.501-19.164-4.612-28.749zM224 209.699c-12-3.743-23.912-9.088-32.051-16.048-8.621-7.355-12.673-17.534-12.673-30.545 0-9.241 2.414-16.94 7.004-23.102 4.58-6.161 9.912-11.038 16.88-14.631 6.18-3.189 13.84-5.565 20.84-7.138v91.464zm118.902 149.772c-2.939 6.673-7.699 12.576-14.303 17.711-6.602 5.133-15.744 9.328-26.377 12.577-4.5 1.378-8.223 2.444-14.223 3.236v-107.11c10 2.624 18.18 5.332 26.326 8.131 8.062 2.744 15.748 7.443 22.537 14.116 6.785 6.676 10.309 17.03 10.309 31.06.001 6.85-1.337 13.605-4.269 20.279z">
+                                        </path>
+                                    </svg><span class="text-primary" id="top-2-prize"></span><svg stroke="currentColor"
+                                        fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
+                                        class="ml-2 text-primary" height="1em" width="1em">
+                                        <path
+                                            d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z">
+                                        </path>
+                                    </svg>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="top-1" class="fade-in-1"
+                    style="order: 2; margin-bottom: 0px; grid-column: span 1 / span 1; opacity: 1; transform: none;">
+                    <div data-winner="true"
+                        class="flex flex-col items-center rounded-xl group z-10 data-[winner=true]:!z-0">
+                        <div
+                            class="relative border-2 border-[hsl(264_48%_18%)] bg-card bg-gradient-to-b from-primary-dark/20 to-transparent rounded-2xl flex h-auto flex-col items-center gap-7 pt-10 w-[250px] glow-card">
+                            <div
+                                class="absolute flex px-6 group-data-[winner=true]:text-2xl text-1xl group-data-[winner=true]:text-primary scale-[2.2] -top-4">
+                                <img src="crown.png" alt="" class="w-5 h-5">
+                            </div><span
+                                class="relative flex shrink-0 overflow-hidden rounded-full w-20 h-20 bg-muted"><img
+                                    class="aspect-square h-full w-full p-2" alt="**********123" src="stake.svg"></span>
+                            <div
+                                class="flex flex-col p-2 items-center overflow-hidden gap-2 rounded-t-[50%] rounded-b-2xl pt-6 w-full bg-card border-t-2 border-primary/30">
+                                <h3 class="tracking-tight text-xl font-semibold" id="top-1-name">****te6</h3>
+                                <p class="text-muted-foreground inline-flex items-center gap-1 text-base font-semibold"
+                                    id="top-1-wage">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em">
+                                        <path
+                                            d="M411.387 303.256c-3.119-9.577-7.891-18.561-14.301-26.952-6.422-8.382-14.396-15.826-23.93-22.331-9.539-6.498-20.721-11.63-33.553-15.4-5.143-1.363-14.189-3.506-26.104-6.418-8.516-2.074-16.5-4.2-25.5-6.367V120.065c9 2.396 15.252 6.202 21.926 10.43C324.204 139.535 333.157 155 335.78 176h69.174c-.654-18-4.65-32.76-11.996-46.02-8.07-14.543-18.977-27.024-32.73-36.956-13.75-9.922-30.225-17.49-48.377-22.455C303.967 68.416 297 66.605 288 65.386V32h-64v33.167c-7 1.044-15.148 2.445-22.426 4.25-17.242 4.283-32.388 10.868-45.951 19.764-13.571 8.905-24.352 20.112-32.604 33.627-8.251 13.523-12.312 29.52-12.312 48 0 9.585 1.407 18.993 4.157 28.235 2.752 9.241 7.442 17.967 14.042 26.181 6.603 8.214 15.495 15.658 26.687 22.332 11.183 6.672 24.705 12.064 41.576 16.171 9.287 2.345 18.83 4.534 26.83 6.576v119.586c-11-2.919-21.889-7.399-30.678-13.479-9.17-6.327-16.066-13.953-21.198-23.884-4.779-9.229-7.073-20.526-7.407-32.526H96c.695 21 5.25 39.494 13.672 55.371 8.799 16.604 20.533 29.96 35.204 40.562 14.662 10.613 31.393 18.356 51.198 23.491 8.885 2.304 18.926 3.96 27.926 5.23V480h64v-34.54c10-1.069 18.957-2.69 28.527-4.879 18.701-4.273 35.645-11.036 50.316-20.276 14.662-9.24 26.621-21.128 35.611-35.681 8.98-14.541 13.545-32.085 13.545-52.619.001-9.578-1.501-19.164-4.612-28.749zM224 209.699c-12-3.743-23.912-9.088-32.051-16.048-8.621-7.355-12.673-17.534-12.673-30.545 0-9.241 2.414-16.94 7.004-23.102 4.58-6.161 9.912-11.038 16.88-14.631 6.18-3.189 13.84-5.565 20.84-7.138v91.464zm118.902 149.772c-2.939 6.673-7.699 12.576-14.303 17.711-6.602 5.133-15.744 9.328-26.377 12.577-4.5 1.378-8.223 2.444-14.223 3.236v-107.11c10 2.624 18.18 5.332 26.326 8.131 8.062 2.744 15.748 7.443 22.537 14.116 6.785 6.676 10.309 17.03 10.309 31.06.001 6.85-1.337 13.605-4.269 20.279z">
+                                        </path>
+                                    </svg>
+                                </p>
+                                <h3
+                                    class="tracking-tight inline-flex items-center justify-center  gap-1 pb-2 text-xl font-bold text-primary">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em">
+                                        <path
+                                            d="M411.387 303.256c-3.119-9.577-7.891-18.561-14.301-26.952-6.422-8.382-14.396-15.826-23.93-22.331-9.539-6.498-20.721-11.63-33.553-15.4-5.143-1.363-14.189-3.506-26.104-6.418-8.516-2.074-16.5-4.2-25.5-6.367V120.065c9 2.396 15.252 6.202 21.926 10.43C324.204 139.535 333.157 155 335.78 176h69.174c-.654-18-4.65-32.76-11.996-46.02-8.07-14.543-18.977-27.024-32.73-36.956-13.75-9.922-30.225-17.49-48.377-22.455C303.967 68.416 297 66.605 288 65.386V32h-64v33.167c-7 1.044-15.148 2.445-22.426 4.25-17.242 4.283-32.388 10.868-45.951 19.764-13.571 8.905-24.352 20.112-32.604 33.627-8.251 13.523-12.312 29.52-12.312 48 0 9.585 1.407 18.993 4.157 28.235 2.752 9.241 7.442 17.967 14.042 26.181 6.603 8.214 15.495 15.658 26.687 22.332 11.183 6.672 24.705 12.064 41.576 16.171 9.287 2.345 18.83 4.534 26.83 6.576v119.586c-11-2.919-21.889-7.399-30.678-13.479-9.17-6.327-16.066-13.953-21.198-23.884-4.779-9.229-7.073-20.526-7.407-32.526H96c.695 21 5.25 39.494 13.672 55.371 8.799 16.604 20.533 29.96 35.204 40.562 14.662 10.613 31.393 18.356 51.198 23.491 8.885 2.304 18.926 3.96 27.926 5.23V480h64v-34.54c10-1.069 18.957-2.69 28.527-4.879 18.701-4.273 35.645-11.036 50.316-20.276 14.662-9.24 26.621-21.128 35.611-35.681 8.98-14.541 13.545-32.085 13.545-52.619.001-9.578-1.501-19.164-4.612-28.749zM224 209.699c-12-3.743-23.912-9.088-32.051-16.048-8.621-7.355-12.673-17.534-12.673-30.545 0-9.241 2.414-16.94 7.004-23.102 4.58-6.161 9.912-11.038 16.88-14.631 6.18-3.189 13.84-5.565 20.84-7.138v91.464zm118.902 149.772c-2.939 6.673-7.699 12.576-14.303 17.711-6.602 5.133-15.744 9.328-26.377 12.577-4.5 1.378-8.223 2.444-14.223 3.236v-107.11c10 2.624 18.18 5.332 26.326 8.131 8.062 2.744 15.748 7.443 22.537 14.116 6.785 6.676 10.309 17.03 10.309 31.06.001 6.85-1.337 13.605-4.269 20.279z">
+                                        </path>
+                                    </svg>
+                                    <span class="text-primary" id="top-1-prize"></span><svg stroke="currentColor"
+                                        fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
+                                        class="ml-2 text-primary" height="1em" width="1em">
+                                        <path
+                                            d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z">
+                                        </path>
+                                    </svg>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="top-3" class="fade-in-3"
+                    style="order: 3; margin-bottom: 0px; grid-column: span 1 / span 1; opacity: 1; transform: none;">
+                    <div data-winner="false"
+                        class="flex flex-col items-center rounded-xl group z-10 data-[winner=true]:!z-0">
+                        <div
+                            class="relative border-2 border-[hsl(264_48%_18%)] bg-card bg-gradient-to-b from-primary-dark/20 to-transparent rounded-2xl flex h-auto flex-col items-center gap-7 pt-10 w-[250px] glow-card">
+                            <div
+                                class="absolute flex px-6 group-data-[winner=true]:text-2xl text-1xl group-data-[winner=true]:text-primary scale-[2.2] -top-3">
+                                3</div><span
+                                class="relative flex shrink-0 overflow-hidden rounded-full w-20 h-20 bg-muted"><img
+                                    class="aspect-square h-full w-full p-2" alt="**ku5" src="stake.svg"></span>
+                            <div
+                                class="flex flex-col p-2 items-center overflow-hidden gap-2 rounded-t-[50%] rounded-b-2xl pt-6 w-full bg-card border-t-2 border-primary/30">
+                                <h3 class="tracking-tight text-xl font-semibold" id="top-3-name">**ku5</h3>
+                                <p class="text-muted-foreground inline-flex items-center gap-1 text-base font-semibold"
+                                    id="top-3-wage">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em">
+                                        <path
+                                            d="M411.387 303.256c-3.119-9.577-7.891-18.561-14.301-26.952-6.422-8.382-14.396-15.826-23.93-22.331-9.539-6.498-20.721-11.63-33.553-15.4-5.143-1.363-14.189-3.506-26.104-6.418-8.516-2.074-16.5-4.2-25.5-6.367V120.065c9 2.396 15.252 6.202 21.926 10.43C324.204 139.535 333.157 155 335.78 176h69.174c-.654-18-4.65-32.76-11.996-46.02-8.07-14.543-18.977-27.024-32.73-36.956-13.75-9.922-30.225-17.49-48.377-22.455C303.967 68.416 297 66.605 288 65.386V32h-64v33.167c-7 1.044-15.148 2.445-22.426 4.25-17.242 4.283-32.388 10.868-45.951 19.764-13.571 8.905-24.352 20.112-32.604 33.627-8.251 13.523-12.312 29.52-12.312 48 0 9.585 1.407 18.993 4.157 28.235 2.752 9.241 7.442 17.967 14.042 26.181 6.603 8.214 15.495 15.658 26.687 22.332 11.183 6.672 24.705 12.064 41.576 16.171 9.287 2.345 18.83 4.534 26.83 6.576v119.586c-11-2.919-21.889-7.399-30.678-13.479-9.17-6.327-16.066-13.953-21.198-23.884-4.779-9.229-7.073-20.526-7.407-32.526H96c.695 21 5.25 39.494 13.672 55.371 8.799 16.604 20.533 29.96 35.204 40.562 14.662 10.613 31.393 18.356 51.198 23.491 8.885 2.304 18.926 3.96 27.926 5.23V480h64v-34.54c10-1.069 18.957-2.69 28.527-4.879 18.701-4.273 35.645-11.036 50.316-20.276 14.662-9.24 26.621-21.128 35.611-35.681 8.98-14.541 13.545-32.085 13.545-52.619.001-9.578-1.501-19.164-4.612-28.749zM224 209.699c-12-3.743-23.912-9.088-32.051-16.048-8.621-7.355-12.673-17.534-12.673-30.545 0-9.241 2.414-16.94 7.004-23.102 4.58-6.161 9.912-11.038 16.88-14.631 6.18-3.189 13.84-5.565 20.84-7.138v91.464zm118.902 149.772c-2.939 6.673-7.699 12.576-14.303 17.711-6.602 5.133-15.744 9.328-26.377 12.577-4.5 1.378-8.223 2.444-14.223 3.236v-107.11c10 2.624 18.18 5.332 26.326 8.131 8.062 2.744 15.748 7.443 22.537 14.116 6.785 6.676 10.309 17.03 10.309 31.06.001 6.85-1.337 13.605-4.269 20.279z">
+                                        </path>
+                                    </svg>
+                                </p>
+                                <h3
+                                    class="tracking-tight inline-flex items-center justify-center  gap-1 pb-2 text-xl font-bold text-primary">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" height="1em" width="1em">
+                                        <path
+                                            d="M411.387 303.256c-3.119-9.577-7.891-18.561-14.301-26.952-6.422-8.382-14.396-15.826-23.93-22.331-9.539-6.498-20.721-11.63-33.553-15.4-5.143-1.363-14.189-3.506-26.104-6.418-8.516-2.074-16.5-4.2-25.5-6.367V120.065c9 2.396 15.252 6.202 21.926 10.43C324.204 139.535 333.157 155 335.78 176h69.174c-.654-18-4.65-32.76-11.996-46.02-8.07-14.543-18.977-27.024-32.73-36.956-13.75-9.922-30.225-17.49-48.377-22.455C303.967 68.416 297 66.605 288 65.386V32h-64v33.167c-7 1.044-15.148 2.445-22.426 4.25-17.242 4.283-32.388 10.868-45.951 19.764-13.571 8.905-24.352 20.112-32.604 33.627-8.251 13.523-12.312 29.52-12.312 48 0 9.585 1.407 18.993 4.157 28.235 2.752 9.241 7.442 17.967 14.042 26.181 6.603 8.214 15.495 15.658 26.687 22.332 11.183 6.672 24.705 12.064 41.576 16.171 9.287 2.345 18.83 4.534 26.83 6.576v119.586c-11-2.919-21.889-7.399-30.678-13.479-9.17-6.327-16.066-13.953-21.198-23.884-4.779-9.229-7.073-20.526-7.407-32.526H96c.695 21 5.25 39.494 13.672 55.371 8.799 16.604 20.533 29.96 35.204 40.562 14.662 10.613 31.393 18.356 51.198 23.491 8.885 2.304 18.926 3.96 27.926 5.23V480h64v-34.54c10-1.069 18.957-2.69 28.527-4.879 18.701-4.273 35.645-11.036 50.316-20.276 14.662-9.24 26.621-21.128 35.611-35.681 8.98-14.541 13.545-32.085 13.545-52.619.001-9.578-1.501-19.164-4.612-28.749zM224 209.699c-12-3.743-23.912-9.088-32.051-16.048-8.621-7.355-12.673-17.534-12.673-30.545 0-9.241 2.414-16.94 7.004-23.102 4.58-6.161 9.912-11.038 16.88-14.631 6.18-3.189 13.84-5.565 20.84-7.138v91.464zm118.902 149.772c-2.939 6.673-7.699 12.576-14.303 17.711-6.602 5.133-15.744 9.328-26.377 12.577-4.5 1.378-8.223 2.444-14.223 3.236v-107.11c10 2.624 18.18 5.332 26.326 8.131 8.062 2.744 15.748 7.443 22.537 14.116 6.785 6.676 10.309 17.03 10.309 31.06.001 6.85-1.337 13.605-4.269 20.279z">
+                                        </path>
+                                    </svg><span class="text-primary" id="top-3-prize">1,000</span><svg
+                                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
+                                        class="ml-2 text-primary" height="1em" width="1em">
+                                        <path
+                                            d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z">
+                                        </path>
+                                    </svg>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-3" style="margin: 0 2rem;">
+                <div class="flex flex-row items-center gap-3 " style="margin-top:2rem;"><svg stroke="currentColor"
+                        fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-muted-foreground" height="1em" width="1em">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <p class="text-small text-muted-foreground">Wager abuse may result in
+                        disqualification.</p>
+                </div>
+                <div class="flex flex-row items-center gap-3  mb-4">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                        stroke-linejoin="round" class="text-muted-foreground" height="1em" width="1em">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <p class="text-small text-muted-foreground "> Leaderboard updates every 6 hours.</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full max-sm:overflow-x-auto">
+            <div class="flex w-full flex-col gap-4 min-w-[350px]">
+                <div class="inline-flex items-center justify-between gap-4 pl-3 uppercase max-sm:pl-4 max-sm:pr-5 pr-7">
+                    <div class="inline-flex items-center gap-2 pl-2 opacity-50 max-sm:text-sm"><svg
+                            stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                            height="1em" width="1em">
+                            <path
+                                d="M256 288A144 144 0 1 0 256 0a144 144 0 1 0 0 288zm-94.7 32C72.2 320 0 392.2 0 481.3c0 17 13.8 30.7 30.7 30.7H481.3c17 0 30.7-13.8 30.7-30.7C512 392.2 439.8 320 350.7 320H161.3z">
+                            </path>
+                        </svg>
+                        <h3 class="leading-none tracking-tight font-bold">Participant</h3>
+                    </div>
+
+                    <div class="inline-flex items-center justify-between max-sm:text-sm w-[210px] max-sm:w-[130px]">
+                        <div class="inline-flex items-center gap-2 opacity-50"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="max-sm:hidden"
+                                height="1em" width="1em">
+                                <path
+                                    d="M411.387 303.256c-3.119-9.577-7.891-18.561-14.301-26.952-6.422-8.382-14.396-15.826-23.93-22.331-9.539-6.498-20.721-11.63-33.553-15.4-5.143-1.363-14.189-3.506-26.104-6.418-8.516-2.074-16.5-4.2-25.5-6.367V120.065c9 2.396 15.252 6.202 21.926 10.43C324.204 139.535 333.157 155 335.78 176h69.174c-.654-18-4.65-32.76-11.996-46.02-8.07-14.543-18.977-27.024-32.73-36.956-13.75-9.922-30.225-17.49-48.377-22.455C303.967 68.416 297 66.605 288 65.386V32h-64v33.167c-7 1.044-15.148 2.445-22.426 4.25-17.242 4.283-32.388 10.868-45.951 19.764-13.571 8.905-24.352 20.112-32.604 33.627-8.251 13.523-12.312 29.52-12.312 48 0 9.585 1.407 18.993 4.157 28.235 2.752 9.241 7.442 17.967 14.042 26.181 6.603 8.214 15.495 15.658 26.687 22.332 11.183 6.672 24.705 12.064 41.576 16.171 9.287 2.345 18.83 4.534 26.83 6.576v119.586c-11-2.919-21.889-7.399-30.678-13.479-9.17-6.327-16.066-13.953-21.198-23.884-4.779-9.229-7.073-20.526-7.407-32.526H96c.695 21 5.25 39.494 13.672 55.371 8.799 16.604 20.533 29.96 35.204 40.562 14.662 10.613 31.393 18.356 51.198 23.491 8.885 2.304 18.926 3.96 27.926 5.23V480h64v-34.54c10-1.069 18.957-2.69 28.527-4.879 18.701-4.273 35.645-11.036 50.316-20.276 14.662-9.24 26.621-21.128 35.611-35.681 8.98-14.541 13.545-32.085 13.545-52.619.001-9.578-1.501-19.164-4.612-28.749zM224 209.699c-12-3.743-23.912-9.088-32.051-16.048-8.621-7.355-12.673-17.534-12.673-30.545 0-9.241 2.414-16.94 7.004-23.102 4.58-6.161 9.912-11.038 16.88-14.631 6.18-3.189 13.84-5.565 20.84-7.138v91.464zm118.902 149.772c-2.939 6.673-7.699 12.576-14.303 17.711-6.602 5.133-15.744 9.328-26.377 12.577-4.5 1.378-8.223 2.444-14.223 3.236v-107.11c10 2.624 18.18 5.332 26.326 8.131 8.062 2.744 15.748 7.443 22.537 14.116 6.785 6.676 10.309 17.03 10.309 31.06.001 6.85-1.337 13.605-4.269 20.279z">
+                                </path>
+                            </svg>
+                            <h3 class="leading-none tracking-tight font-bold">Wagered</h3>
+                        </div>
+                        <div class="inline-flex items-center gap-2"><svg stroke="currentColor" fill="currentColor"
+                                stroke-width="0" viewBox="0 0 576 512" class="fill-primary" height="1em" width="1em">
+                                <path
+                                    d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z">
+                                </path>
+                            </svg>
+                            <h3 class="leading-none tracking-tight font-bold text-primary max-sm:hidden">Prize</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col overflow-hidden border-2 rounded-2xl border-[hsl(264_48%_18%)]">
+                    <div style="opacity: 1; transform: none;">
+                        <div
+                            class="border text-card-foreground overflow-hidden rounded-none bg-card shadow-none border-none py-4 relative inline-flex w-full items-center gap-4 pr-6">
+                            <div
+                                class="flex items-center text-lg justify-center px-5 font-semibold text-center text-small text-primary">
+                                4</div>
+                            <div class="flex flex-row items-center justify-between w-full gap-4">
+                                <div class="inline-flex items-center gap-4">
+                                    <h3 class="leading-none tracking-tight font-bold max-sm:text-sm" id="top-4-name">
+                                        *****sss</h3>
+                                </div>
+                                <div class="inline-flex items-center justify-between gap-4 max-sm:text-xs">
+                                    <div
+                                        class="inline-flex items-center justify-start gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight font-semibold text-muted-foreground"
+                                            id="top-4-wage">
+                                            $
+                                            199,371.36</h3>
+                                    </div>
+                                    <div data-orientation="vertical" role="none"
+                                        class="shrink-0 bg-border w-[1px] h-5 opacity-0 max-sm:hidden"></div>
+                                    <div
+                                        class="inline-flex border-l  items-center justify-end gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight text-primary font-semibold"
+                                            id="top-4-prize">
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="opacity: 1; transform: none;">
+                        <div
+                            class="border text-card-foreground overflow-hidden rounded-none bg-card shadow-none border-none py-4 relative inline-flex w-full items-center gap-4 pr-6">
+                            <div
+                                class="flex items-center text-lg justify-center px-5 font-semibold text-center text-small text-primary">
+                                5</div>
+                            <div class="flex flex-row items-center justify-between w-full gap-4">
+                                <div class="inline-flex items-center gap-4">
+                                    <h3 class="leading-none tracking-tight font-bold max-sm:text-sm" id="top-5-name">
+                                    </h3>
+                                </div>
+                                <div class="inline-flex items-center justify-between gap-4 max-sm:text-xs">
+                                    <div
+                                        class="inline-flex items-center justify-start gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight font-semibold text-muted-foreground"
+                                            id="top-5-wage">
+                                        </h3>
+                                    </div>
+                                    <div data-orientation="vertical" role="none"
+                                        class="shrink-0 bg-border w-[1px] h-5 opacity-0 max-sm:hidden"></div>
+                                    <div
+                                        class="inline-flex border-l  items-center justify-end gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight text-primary font-semibold"
+                                            id="top-5-prize">
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="opacity: 1; transform: none;">
+                        <div
+                            class="border text-card-foreground overflow-hidden rounded-none bg-card shadow-none border-none py-4 relative inline-flex w-full items-center gap-4 pr-6">
+                            <div
+                                class="flex items-center text-lg justify-center px-5 font-semibold text-center text-small text-primary">
+                                6</div>
+                            <div class="flex flex-row items-center justify-between w-full gap-4">
+                                <div class="inline-flex items-center gap-4">
+                                    <h3 class="leading-none tracking-tight font-bold max-sm:text-sm" id="top-6-name">
+                                    </h3>
+                                </div>
+                                <div class="inline-flex items-center justify-between gap-4 max-sm:text-xs">
+                                    <div
+                                        class="inline-flex items-center justify-start gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight font-semibold text-muted-foreground"
+                                            id="top-6-wage">
+                                        </h3>
+                                    </div>
+                                    <div data-orientation="vertical" role="none"
+                                        class="shrink-0 bg-border w-[1px] h-5 opacity-0 max-sm:hidden"></div>
+                                    <div
+                                        class="inline-flex border-l  items-center justify-end gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight text-primary font-semibold"
+                                            id="top-6-prize">
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="opacity: 1; transform: none;">
+                        <div
+                            class="border text-card-foreground overflow-hidden rounded-none bg-card shadow-none border-none py-4 relative inline-flex w-full items-center gap-4 pr-6">
+                            <div
+                                class="flex items-center text-lg justify-center px-5 font-semibold text-center text-small text-primary">
+                                7</div>
+                            <div class="flex flex-row items-center justify-between w-full gap-4">
+                                <div class="inline-flex items-center gap-4">
+                                    <h3 class="leading-none tracking-tight font-bold max-sm:text-sm" id="top-7-name">
+                                    </h3>
+                                </div>
+                                <div class="inline-flex items-center justify-between gap-4 max-sm:text-xs">
+                                    <div
+                                        class="inline-flex items-center justify-start gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight font-semibold text-muted-foreground"
+                                            id="top-7-wage">
+                                        </h3>
+                                    </div>
+                                    <div data-orientation="vertical" role="none"
+                                        class="shrink-0 bg-border w-[1px] h-5 opacity-0 max-sm:hidden"></div>
+                                    <div
+                                        class="inline-flex border-l  items-center justify-end gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight text-primary font-semibold"
+                                            id="top-7-prize">
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="opacity: 1; transform: none;">
+                        <div
+                            class="border text-card-foreground overflow-hidden rounded-none bg-card shadow-none border-none py-4 relative inline-flex w-full items-center gap-4 pr-6">
+                            <div
+                                class="flex items-center text-lg justify-center px-5 font-semibold text-center text-small text-primary">
+                                8</div>
+                            <div class="flex flex-row items-center justify-between w-full gap-4">
+                                <div class="inline-flex items-center gap-4">
+                                    <h3 class="leading-none tracking-tight font-bold max-sm:text-sm" id="top-8-name">
+                                        ***maz</h3>
+                                </div>
+                                <div class="inline-flex items-center justify-between gap-4 max-sm:text-xs">
+                                    <div
+                                        class="inline-flex items-center justify-start gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight font-semibold text-muted-foreground"
+                                            id="top-8-wage">
+                                            $
+                                            115,168.75</h3>
+                                    </div>
+                                    <div data-orientation="vertical" role="none"
+                                        class="shrink-0 bg-border w-[1px] h-5 opacity-0 max-sm:hidden"></div>
+                                    <div
+                                        class="inline-flex border-l  items-center justify-end gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight text-primary font-semibold"
+                                            id="top-8-prize">$ 100
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="opacity: 1; transform: none;">
+                        <div
+                            class="border text-card-foreground overflow-hidden rounded-none bg-card shadow-none border-none py-4 relative inline-flex w-full items-center gap-4 pr-6">
+                            <div
+                                class="flex items-center text-lg justify-center px-5 font-semibold text-center text-small text-primary">
+                                9</div>
+                            <div class="flex flex-row items-center justify-between w-full gap-4">
+                                <div class="inline-flex items-center gap-4">
+                                    <h3 class="leading-none tracking-tight font-bold max-sm:text-sm" id="top-9-name">
+                                        ******in1</h3>
+                                </div>
+                                <div class="inline-flex items-center justify-between gap-4 max-sm:text-xs">
+                                    <div
+                                        class="inline-flex items-center justify-start gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight font-semibold text-muted-foreground"
+                                            id="top-9-wage">
+                                            $
+                                            99,428.94</h3>
+                                    </div>
+                                    <div data-orientation="vertical" role="none"
+                                        class="shrink-0 bg-border w-[1px] h-5 opacity-0 max-sm:hidden"></div>
+                                    <div
+                                        class="inline-flex border-l  items-center justify-end gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight text-primary font-semibold"
+                                            id="top-9-prize">$ 100
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="opacity: 1; transform: none;">
+                        <div
+                            class="border text-card-foreground overflow-hidden rounded-none bg-card shadow-none border-none py-4 relative inline-flex w-full items-center gap-4 pr-6">
+                            <div
+                                class="flex items-center text-lg justify-center px-5 font-semibold text-center text-small text-primary">
+                                10</div>
+                            <div class="flex flex-row items-center justify-between w-full gap-4">
+                                <div class="inline-flex items-center gap-4">
+                                    <h3 class="leading-none tracking-tight font-bold max-sm:text-sm" id="top-10-name">
+                                        **********ler
+                                    </h3>
+                                </div>
+                                <div class="inline-flex items-center justify-between gap-4 max-sm:text-xs">
+                                    <div
+                                        class="inline-flex items-center justify-start gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight font-semibold text-muted-foreground"
+                                            id="top-10-wage">
+                                            $
+                                            97,287.68</h3>
+                                    </div>
+                                    <div data-orientation="vertical" role="none"
+                                        class="shrink-0 bg-border w-[1px] h-5 opacity-0 max-sm:hidden"></div>
+                                    <div
+                                        class="inline-flex border-l  items-center justify-end gap-2 whitespace-nowrap min-w-[50px] sm:min-w-[80px]">
+                                        <h3 class="leading-none tracking-tight text-primary font-semibold"
+                                            id="top-10-prize">$ 100
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer
+        class="flex w-full items-center justify-center bg-gradient-to-b from-transparent to-card mt-\[--footer-margin\] ">
+        <div
+            class="rounded-sm  text-card-foreground shadow flex relative bg-transparent flex-col gap-8 px-10 py-16 max-sm:px-5 py-8 overflow-hidden w-full max-w-none mx-248">
+            <div class="flex flex-row justify-between w-full gap-6 max-sm:flex-col">
+                <div class="flex flex-row items-center gap-4"><span
+                        class="relative flex shrink-0 overflow-hidden rounded-full w-20 h-max"><img
+                            class="h-full w-full  aspect-auto" alt="HOLLOW" src="hollow.png"></span>
+                    <div class="flex flex-col"><span class="text-sm opacity-50">© Copyright 2025
+                            <b>HOLLOWREWARDS.COM</b><br><span>All rights reserved</span></span></div>
+                </div>
+                <div class="flex flex-row items-center gap-2"><a target="_blank" rel="noreferrer noopener"
+                        class="inline-flex items-center font-bold justify-center whitespace-nowrap rounded-sm text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-white hover:text-primary h-10 w-12"
+                        href="https://x.com" previewlistener="true"><svg stroke="currentColor" fill="currentColor"
+                            stroke-width="0" viewBox="0 0 512 512" class="w-5 h-5" height="1em" width="1em">
+                            <path
+                                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                            </path>
+                        </svg></a><a target="_blank" rel="noreferrer noopener"
+                        class="inline-flex items-center font-bold justify-center whitespace-nowrap rounded-sm text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-white hover:text-primary h-10 w-12"
+                        href="https://www.discord.com" previewlistener="true"><svg stroke="currentColor"
+                            fill="currentColor" stroke-width="0" viewBox="0 0 47 50" class="w-5 h-5" height="1em"
+                            width="1em">
+                            <path
+                                d="M41.625,10.76953c-3.98047,-3.20313 -10.27734,-3.74609 -10.54687,-3.76563c-0.41797,-0.03516 -0.81641,0.19922 -0.98828,0.58594c-0.01562,0.02344 -0.15234,0.33984 -0.30469,0.83203c2.63281,0.44531 5.86719,1.33984 8.79297,3.15625c0.46875,0.28906 0.61328,0.90625 0.32422,1.375c-0.19141,0.30859 -0.51562,0.47656 -0.85156,0.47656c-0.17969,0 -0.36328,-0.05078 -0.52734,-0.15234c-5.03125,-3.12109 -11.3125,-3.27734 -12.52344,-3.27734c-1.21094,0 -7.49609,0.15625 -12.52344,3.27734c-0.46875,0.29297 -1.08594,0.14844 -1.375,-0.32031c-0.29297,-0.47266 -0.14844,-1.08594 0.32031,-1.37891c2.92578,-1.8125 6.16016,-2.71094 8.79297,-3.15234c-0.15234,-0.49609 -0.28906,-0.80859 -0.30078,-0.83594c-0.17578,-0.38672 -0.57031,-0.62891 -0.99219,-0.58594c-0.26953,0.01953 -6.56641,0.5625 -10.60156,3.80859c-2.10547,1.94922 -6.32031,13.33984 -6.32031,23.1875c0,0.17578 0.04688,0.34375 0.13281,0.49609c2.90625,5.10938 10.83984,6.44531 12.64844,6.50391c0.00781,0 0.01953,0 0.03125,0c0.32031,0 0.62109,-0.15234 0.80859,-0.41016l1.82813,-2.51562c-4.93359,-1.27344 -7.45312,-3.4375 -7.59766,-3.56641c-0.41406,-0.36328 -0.45312,-0.99609 -0.08594,-1.41016c0.36328,-0.41406 0.99609,-0.45312 1.41016,-0.08984c0.05859,0.05469 4.69922,3.99219 13.82422,3.99219c9.14063,0 13.78125,-3.95312 13.82813,-3.99219c0.41406,-0.35937 1.04297,-0.32422 1.41016,0.09375c0.36328,0.41406 0.32422,1.04297 -0.08984,1.40625c-0.14453,0.12891 -2.66406,2.29297 -7.59766,3.56641l1.82813,2.51563c0.1875,0.25781 0.48828,0.41016 0.80859,0.41016c0.01172,0 0.02344,0 0.03125,0c1.80859,-0.05859 9.74219,-1.39453 12.64844,-6.50391c0.08594,-0.15234 0.13281,-0.32031 0.13281,-0.49609c0,-9.84766 -4.21484,-21.23828 -6.375,-23.23047zM18.5,30c-1.93359,0 -3.5,-1.78906 -3.5,-4c0,-2.21094 1.56641,-4 3.5,-4c1.93359,0 3.5,1.78906 3.5,4c0,2.21094 -1.56641,4 -3.5,4zM31.5,30c-1.93359,0 -3.5,-1.78906 -3.5,-4c0,-2.21094 1.56641,-4 3.5,-4c1.93359,0 3.5,1.78906 3.5,4c0,2.21094 -1.56641,4 -3.5,4z">
+                            </path>
+                        </svg></a><a target="_blank" rel="noreferrer noopener"
+                        class="inline-flex items-center font-bold justify-center whitespace-nowrap rounded-sm text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-white hover:text-primary h-10 w-12"
+                        href="https://www.youtube.com" previewlistener="true"><svg stroke="currentColor"
+                            fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="w-5 h-5" height="1em"
+                            width="1em">
+                            <path
+                                d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                            </path>
+                        </svg></a></div>
+            </div>
+            <div class="flex flex-row items-center gap-4 p-4 rounded-sm max-sm:flex-col max-sm:items-start bg-muted/30">
+                <div class="flex items-center justify-center p-3 rounded-full aspect-square"><img alt="18+"
+                        loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="opacity-50"
+                        style="color:transparent" src="eighteen.svg"></div><span
+                    class="text-sm font-semibold opacity-40 pr-4">We do not
+                    take responsibility for any losses from gambling in casinos and betting sites which are linked or
+                    promoted on our website(s). As a player, you are responsible for your bets.</span>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>

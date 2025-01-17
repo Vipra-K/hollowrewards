@@ -44,4 +44,32 @@ async function updateLeaderboard() {
 updateLeaderboard();
 
 // Update leaderboard every  12 hours
-setInterval(updateLeaderboard, 21600000);
+setInterval(updateLeaderboard, 60000);
+
+// Set the target date
+const targetDate = new Date();
+targetDate.setDate(targetDate.getDate() + 31); // Countdown for 14 days
+
+function updateCountdown() {
+  const now = new Date();
+  const diff = targetDate - now;
+
+  if (diff > 0) {
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+  } else {
+    clearInterval(interval);
+    document.querySelector(".countdown").innerHTML = "<h2>Time's Up!</h2>";
+  }
+}
+
+// Update the countdown every second
+const interval = setInterval(updateCountdown, 1000);
+updateCountdown();

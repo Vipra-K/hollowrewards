@@ -23,7 +23,22 @@
   /* text-shadow: 0 0 3px #ffffff, 0 0 3px #ffffff, 0 0 8px #ffffff; */
   background-color: transparent;
 }
+.countdown {
+  display: flex;
+  gap: 1rem;
+}
 
+.time {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.label {
+  font-size: large;
+  margin-left: 0.2rem;
+  color: hsl(var(--accent));
+}
 .glow-card {
   box-shadow: 0 0 3px 3px rgba(0, 128, 255, 0.5); /* Adjust color and intensity */
   transition: box-shadow 0.3s ease-in-out; /* Smooth hover effect */

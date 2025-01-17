@@ -1,5 +1,5 @@
 const SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ72U0vVU1fMh0r5q9d0QK46U3oRrU3Sduu-orvNfSPosS6VG_-EiHvKF1AC1okERY9uN1lmSVAYynk/pub?gid=0&single=true&output=tsv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNii-d-rK0eCKFHL0J7Tcwf3J1i3BSMybnxWgdzr4cZhf_0ZQ_CKhJDUnAzup0fi9guWFk5Z7VUXpw/pub?gid=0&single=true&output=tsv";
 async function fetchData() {
   const response = await fetch(SHEET_URL);
   const text = await response.text();
@@ -44,4 +44,4 @@ async function updateLeaderboard() {
 updateLeaderboard();
 
 // Update leaderboard every  12 hours
-setInterval(updateLeaderboard, 43200000);
+setInterval(updateLeaderboard, 21600000);

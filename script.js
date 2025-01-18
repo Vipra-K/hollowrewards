@@ -45,13 +45,10 @@ updateLeaderboard();
 
 // Update leaderboard every  12 hours
 setInterval(updateLeaderboard, 60000);
-
-// Set the target date
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 31); // Countdown for 14 days
+const targetDate = new Date("2025-02-18T00:00:00").getTime();
 
 function updateCountdown() {
-  const now = new Date();
+  const now = new Date().getTime();
   const diff = targetDate - now;
 
   if (diff > 0) {
@@ -70,6 +67,5 @@ function updateCountdown() {
   }
 }
 
-// Update the countdown every second
 const interval = setInterval(updateCountdown, 1000);
 updateCountdown();

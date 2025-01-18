@@ -10,6 +10,28 @@
   background: #052334;
   z-index: 9999;
 }
+
+.participant {
+  flex: 1; /* Ensures it shares space proportionally */
+  max-width: 150px; /* Set a maximum width */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prize,
+.wagered {
+  flex: 0.5; /* Adjust proportionally based on your design */
+  text-align: center; /* Align text consistently */
+}
+
+.row {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Distribute items evenly */
+  gap: 10px; /* Optional spacing between items */
+}
+
+
 .text-leaderboard {
   font-size: 3rem;
   margin-bottom: 5rem;

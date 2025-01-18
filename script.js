@@ -45,7 +45,7 @@ updateLeaderboard();
 
 // Update leaderboard every  12 hours
 setInterval(updateLeaderboard, 60000);
-const targetDate = new Date("2025-02-18T00:00:00").getTime();
+const targetDate = new Date("2025-02-17T00:00:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
